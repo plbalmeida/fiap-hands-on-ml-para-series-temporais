@@ -1,3 +1,1 @@
-# Hands-on de ML para séries temporais
-
 Os dados de séries temporais estão por toda parte, desde as flutuações do mercado de ações até os registros de mudanças climáticas por sensores e a atividade cerebral. Qualquer sinal que mude ao longo do tempo pode ser descrito como uma série temporal. Algoritmos de *Machine Learning* são uma ferramenta poderosa para desvendar a complexidade desses dados, gerando previsões e insights valiosos. Este *hands-on* mergulha na fascinante interseção entre *Machine Learning* e os dados de séries temporais, abordando desde a engenharia de *features* passando pode técnicas avançadas de treinamento de modelos, até o o deploy do modelo usando o Streamlit.
