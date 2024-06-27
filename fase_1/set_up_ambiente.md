@@ -26,7 +26,7 @@ Após verificar a instalação, no terminal execute para checar a versão do pyt
 python3 --version
 ```
 
-3) Configuração de Ambiente Virtual
+3) Configuração de ambiente virtual
 
 Para criar o ambiente virtual, vamos usar o venv:
 
@@ -36,3 +36,28 @@ source venv/bin/activate
 ```
 
 Isso garante que as dependências dos projetos não conflitem entre si.
+
+4) Ter arquivo de dependências
+
+Criar o arquivo `requirements.txt`:
+
+```bash
+echo > requirements.txt
+```
+
+Colocar as seguintes bibliotecas do python no arquivo.
+
+```txt
+jupyter
+matplotlib
+numpy
+pandas
+scikit-learn
+```
+
+Execute o comando para instalar as bibliotecas no ambiente virtual criado:
+
+```bash
+pip install -r requirements.txt  
+```
+
