@@ -28,6 +28,20 @@ python3 --version
 
 3) Configuração de ambiente virtual
 
+
+Primeiro crie o diretório do projeto e entre nele:
+
+```bash
+mkdir ml-time-series
+cd ml-time-series/
+```
+
+Abra o VSCode:
+
+```bash
+code .
+```
+
 Para criar o ambiente virtual, vamos usar o venv:
 
 ```bash
@@ -60,4 +74,3 @@ Execute o comando para instalar as bibliotecas no ambiente virtual criado:
 ```bash
 pip install -r requirements.txt  
 ```
-
