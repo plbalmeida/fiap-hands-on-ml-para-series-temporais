@@ -1,7 +1,7 @@
 Esse hands-on possue duas partes.
 
 A **Parte 1** aborda o desenvolvimento do modelo de ML:
-- **`Introdução`**: introdução aos fundamentos de ML, dados de séries temporais e a interseção entre os dois;
+- **`Nivelamento técnico`**: visão geral sobre ML, séries temporais e a interseção entre os dois;
 - **`Engenharia de features para série temporal`**: features mais comuns extraídas de séries temporais com engenharia de features;
 - **`Previsão de série temporal com ML`**: como obter insights sobre os dados antes de treinar seu modelo de ML, assim como as práticas recomendadas para previsão de séries temporais;
 - **`Avaliação de performance de ML para série temporal`**: avaliação de métricas de performance dos modelos treinados em conjunto de dados de teste.
