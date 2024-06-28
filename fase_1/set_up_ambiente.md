@@ -74,3 +74,12 @@ Execute o comando para instalar as bibliotecas no ambiente virtual criado:
 ```bash
 pip install -r requirements.txt  
 ```
+
+5) Notebook para fazer o case
+
+Para fazer o case dessa parte do hands-on, crie um diretório e crie o notebook chamado `case.ipynb`:
+
+```bash
+mkdir notebooks
+echo > case.ipynb
+```
