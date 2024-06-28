@@ -24,16 +24,48 @@ A engenharia de features melhora a capacidade do modelo de capturar padrões tem
 Primeiro vamos checar a tipagem do campo de valor e o index de data, é esperado que o campo de valor seja do tipo `float` e o index do tipo `data`:
 
 ```python
-df[["VALUE (US$)"]].info()
+eia366[["VALUE (US$)"]].info()
+
+<class 'pandas.core.frame.DataFrame'>
+DatetimeIndex: 13464 entries, 1986-01-04 to 2024-06-18
+Data columns (total 1 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   VALUE (US$)  11194 non-null  float64
+dtypes: float64(1)
+memory usage: 210.4 KB
 ```
 
 Vamos selecionar somente a variável de interesse, renomear o campo e o index para padronizar:
 
 ```python
-df = df[["VALUE (US$)"]]
-df.rename(columns={"VALUE (US$)": "value_usd"}, inplace=True)
-df.index.name = "date"
-print(df)
+eia366 = eia366[["VALUE (US$)"]]
+eia366.rename(columns={"VALUE (US$)": "value_usd"}, inplace=True)
+eia366.index.name = "date"
+eia366 = eia366.dropna()
+print(eia366)
+
+           value_usd
+date                 
+1987-05-20      18.63
+1987-05-21      18.45
+1987-05-22      18.55
+1987-05-25      18.60
+1987-05-26      18.63
+...               ...
+2024-06-12      80.52
+2024-06-13      81.44
+2024-06-14      81.49
+2024-06-17      82.45
+2024-06-18      84.79
+
+[11194 rows x 1 columns]
+```
+
+Cópia dos dados originais.
+
+```python
+df = eia366.copy()
 ```
 
 A seguir são criadas variáveis de lag de 1 a 7, para relacionar a variável dependente com os últimos 7 dias de preço do barril do petróleo.

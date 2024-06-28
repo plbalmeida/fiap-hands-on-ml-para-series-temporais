@@ -26,9 +26,25 @@ Nesse case vamos usar o preço por barril do petróleo bruto Brent (FOB), o qual
 Com o código em mãos, é só usar a função `timeseries` para obter os dados.
 
 ```python
-codigo_serie = "EIA366_PBRENT366"
-df = ip.timeseries(codigo_serie)
-print(df)
+cod = "EIA366_PBRENT366"
+eia366 = ip.timeseries(cod)
+print(eia366.head(5))
+
+                        CODE                   RAW DATE  DAY  MONTH  YEAR  \
+DATE                                                                        
+1986-01-04  EIA366_PBRENT366  1986-01-04T00:00:00-02:00    4      1  1986   
+1986-01-05  EIA366_PBRENT366  1986-01-05T00:00:00-02:00    5      1  1986   
+1986-01-06  EIA366_PBRENT366  1986-01-06T00:00:00-02:00    6      1  1986   
+1986-01-07  EIA366_PBRENT366  1986-01-07T00:00:00-02:00    7      1  1986   
+1986-01-08  EIA366_PBRENT366  1986-01-08T00:00:00-02:00    8      1  1986   
+
+            VALUE (US$)  
+DATE                     
+1986-01-04          NaN  
+1986-01-05          NaN  
+1986-01-06          NaN  
+1986-01-07          NaN  
+1986-01-08          NaN  
 ```
 
 Para visualizar a série temporal obtida:
@@ -37,7 +53,7 @@ Para visualizar a série temporal obtida:
 import matplotlib.pyplot as plt
 
 # plota os dados
-df[["VALUE (US$)"]].plot(figsize=(10, 5))
+eia366[["VALUE (US$)"]].plot(figsize=(10, 5))
 plt.title("Série Temporal - EIA366_PBRENT366")
 plt.xlabel("Data")
 plt.ylabel("US$")

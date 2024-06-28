@@ -6,7 +6,7 @@ A **Parte 1** case com dados do IPEA para desenvolvimento de um modelo de ML:
 
 - **Engenharia de features**: Features mais comuns extraídas de séries temporais com engenharia de features.
 
-- **Contrução do modelo ML**: Implementação de técnicas para treino e teste de modelos de ML para séries temporais.
+- **Contrução do modelo ML**: Implementação de técnicas para treino e teste de modelos de ML para séries temporais com previsão em D+1 e D+15.
 
 - **Avaliação de performance**: avaliação de métricas de performance dos modelos treinados em conjunto de dados de teste.
 
