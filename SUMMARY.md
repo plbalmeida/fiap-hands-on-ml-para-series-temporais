@@ -9,5 +9,9 @@
 * [Case IPEA](parte_1/case_ipea/overview.md)
     * [Obtenção dos Dados](parte_1/case_ipea/obtencao_dados.md)
     * [Engenharia de Features](parte_1/case_ipea/engenharia_features.md)
-    * [Treino do modelo de ML](parte_1/case_ipea/treino_ml.md)
-    * [Avaliação de Performance](parte_1/case_ipea/performance_ml.md)
+    * [Previsão de preço D+1]
+        * [Treino do modelo de ML](parte_1/case_ipea/previsao_d1/treino_ml.md)
+        * [Avaliação de Performance](parte_1/case_ipea/previsao_d1/performance_ml.md)
+    * [Previsão de preço D+7]
+        * [Treino do modelo de ML](parte_1/case_ipea/previsao_d7/treino_ml.md)
+        * [Avaliação de Performance](parte_1/case_ipea/previsao_d7/performance_ml.md)
