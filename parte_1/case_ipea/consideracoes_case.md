@@ -35,4 +35,12 @@ pipeline = Pipeline([
 
 3) Testar outros modelos
 
+É interessante avaliar a performance de outros modelos para a previsão do fenômeno de interesse, inclusive modelos clássicos como ARIMA ([https://www.statsmodels.org/stable/generated/statsmodels.tsa.arima.model.ARIMA.html](https://www.statsmodels.org/stable/generated/statsmodels.tsa.arima.model.ARIMA.html)), por exemplo, e utilizar o mesmo como *base line* quando não se tem um ponto de refência com relação a performance de previsão.
+
+4) Incluir mais variáveis
+
+Pode ser útil incluir mais variáveis a partir da variável dependente original, ou incluir variáveis exógenas afim de melhorar a performance preditiva dos modelos, a decisão de incluir mais variáveis depende do domínio do Analista sobre o fenâmeno que está sendo modelado.
+
+
+
 
