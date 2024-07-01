@@ -82,7 +82,7 @@ Agora vamos criar uma varável de média móvel dos últimos 7 dias do preço.
 
 ```python
 # média móvel de 7 dias do preço
-df['rolling_mean_7'] = df['value_usd'].shift(1).rolling(window=7).mean()
+df["rolling_mean_7"] = df["value_usd"].shift(1).rolling(window=7).mean()
 ```
 
 Na sequência criaremos a variável de diferença.
@@ -104,16 +104,16 @@ Assim como a média móvel, é possível obter outras estatísticas móveis, com
 
 ```python
 # desvio padrão móvel do preço na janela de 7 dias
-df['rolling_std_7'] = df["value_usd"].shift(1).rolling(window=7).std()
+df["rolling_std_7"] = df["value_usd"].shift(1).rolling(window=7).std()
 ```
 
 A seguir serão obtidas variáveis de calendário.
 
 ```python
 # variáveis de calendário
-df['day'] = df.index.day
-df['quarter'] = df.index.quarter
-df['year'] = df.index.year
+df["day"] = df.index.day
+df["quarter"] = df.index.quarter
+df["year"] = df.index.year
 ```
 
 Removemos quaisquer linhas com valores NaN que foram criados ao fazer o shift para obtenção de lags, assim como os registros com valores vazios no data set original.
