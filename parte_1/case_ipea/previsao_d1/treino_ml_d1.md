@@ -139,7 +139,11 @@ A seguir é implementado um código para checar a importância das variáveis cr
 - insights e descobertas;
 - documentação e auditoria;
 
-> A importância de features do `GradientBoostingRegressor` varia de 0 a 1 porque os valores são calculados com base na contribuição de cada feature para a melhoria da função de perda e, em seguida, normalizados para que a soma total seja 1. Isso facilita a interpretação e comparação das importâncias relativas das features no modelo. Então para features com valores próximos de 0, indica que a feature não foi usada em nenhuma divisão ao longo das árvores, ou seja, não contribuiu para a melhoria da função de perda. E para features com valores próximos de 1, indica que a feature foi extremamente importante, contribuindo significativamente para a melhoria da função de perda em muitas divisões ao longo das árvores.
+A importância de features do `GradientBoostingRegressor` varia de 0 a 1 porque os valores são calculados com base na contribuição de cada feature para a melhoria da função de perda e, em seguida, normalizados para que a soma total seja 1. Isso facilita a interpretação e comparação das importâncias relativas das features no modelo. 
+
+Então para features com valores próximos de 0, indica que a feature não foi usada em nenhuma divisão ao longo das árvores, ou seja, não contribuiu para a melhoria da função de perda. 
+
+E para features com valores próximos de 1, indica que a feature foi extremamente importante, contribuindo significativamente para a melhoria da função de perda em muitas divisões ao longo das árvores.
 
 ```python
 import pandas as pd
