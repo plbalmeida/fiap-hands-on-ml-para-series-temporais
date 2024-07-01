@@ -1,6 +1,6 @@
 # Considerações sobre o case do IPEA
 
-Algumas técnicas podem ser empregadas para melhorar o código apresentado aqui, como aumentar o espaço amostral de hiperparâmetros, considerar incluir uma etapa de seleção de features (em caso de conjunto de dados hiperdimensional), etc.
+Algumas técnicas podem ser necessárias para melhorar o código apresentado nesse case, como aumentar o espaço amostral de hiperparâmetros, considerar incluir uma etapa de seleção de features (em caso de conjunto de dados hiperdimensional), etc.
 
 A seguir essas sugestões serão discutidas.
 
@@ -40,7 +40,3 @@ pipeline = Pipeline([
 4) Incluir mais variáveis
 
 Pode ser útil incluir mais variáveis a partir da variável dependente original, ou incluir variáveis exógenas afim de melhorar a performance preditiva dos modelos, a decisão de incluir mais variáveis depende do domínio do Analista sobre o fenâmeno que está sendo modelado.
-
-
-
-

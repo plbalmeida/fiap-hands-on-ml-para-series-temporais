@@ -97,3 +97,41 @@ search.fit(X, y)
 print("Best parameters found: ", search.best_params_)
 print("Best score: ", search.best_score_)
 ```
+
+Checando a média da importância de features paras as previsões com `RegressorChain`.
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# acessando os regressores encadeados
+chain_regressors = best_model.named_steps["model"].estimators_
+
+# iterando sobre cada regressor encadeado para coletar as importâncias das features
+importances_list = []
+for chain in chain_regressors:
+    for regressor in chain:
+        if hasattr(regressor, "feature_importances_"):
+            importances_list.append(regressor.feature_importances_)
+
+# convertendo a lista de importâncias para um array numpy
+importances = np.array(importances_list)
+
+# calculando a média das importâncias das features
+mean_importances = np.mean(importances, axis=0)
+
+# DataFrame para as importâncias das features
+importance_df = pd.DataFrame({
+    "Feature": feature_names,
+    "Mean Importance": mean_importances,
+}).sort_values(by="Mean Importance", ascending=False)
+
+# gráfico de barras horizontal com média
+plt.figure(figsize=(10, 8))
+plt.barh(importance_df["Feature"], importance_df["Mean Importance"], color="skyblue")
+plt.xlabel("Mean Importance")
+plt.ylabel("Features")
+plt.title("Feature Importances")
+plt.gca().invert_yaxis()  # inverte o eixo y para a feature mais importante aparecer no topo
+plt.show()
+```
