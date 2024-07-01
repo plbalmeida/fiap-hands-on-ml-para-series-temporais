@@ -5,7 +5,6 @@
 ```python
 import matplotlib.pyplot as plt
 from sklearn.metrics import (
-    mean_squared_error, 
     mean_absolute_error,
     mean_absolute_percentage_error, 
     r2_score
@@ -21,19 +20,14 @@ X_test = X_test.iloc[:len(y_test)]  # alinhando X_test e y_test
 y_pred = search.predict(X_test)
 
 # avaliação da performance
-mse = mean_squared_error(y_test, y_pred, multioutput="raw_values")
 mae = mean_absolute_error(y_test, y_pred, multioutput="raw_values")
 mape = mean_absolute_percentage_error(y_test, y_pred, multioutput="raw_values")
 r2 = r2_score(y_test, y_pred, multioutput="raw_values")
 
-print("Mean Squared Error:", mse)
 print("Mean Absolute Error:", mae)
 print("Mean Absolute Percentage Error:", mape)
 print("R² Score:", r2)
 
-Mean Squared Error: [12.36214533 16.23688413 20.55122628 24.81496418 28.43878859 31.95483632
- 34.7505564  37.48402391 40.89227342 44.8927296  47.46474417 50.97215902
- 55.95739906 61.02748929 64.99371802]
 Mean Absolute Error: [2.32440746 2.75457208 3.10289434 3.4246487  3.69572298 3.9503334
  4.19873355 4.38715484 4.58190056 4.84711349 5.03588346 5.2700822
  5.54430392 5.76858427 5.96091443]
@@ -50,7 +44,6 @@ Agora cada output é uma lista com a performance de cada modelo para cada *D+n*,
 ```python
 pd.DataFrame({
     "Previsão": [f"D+{i}" for i in range(1, 16)],
-    "Mean Squared Error": mse,
     "Mean Absolute Error": mae,
     "Mean Absolute Percentage Error": mape,
     "R² Score": r2
