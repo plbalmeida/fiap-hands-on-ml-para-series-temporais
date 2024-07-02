@@ -1,6 +1,6 @@
 # Considerações sobre o case do IPEA
 
-Algumas técnicas podem ser necessárias para melhorar o código apresentado nesse case, como aumentar o espaço amostral de hiperparâmetros, considerar incluir uma etapa de seleção de features (em caso de conjunto de dados hiperdimensional), etc.
+Algumas técnicas podem ser necessárias para melhorar o código apresentado nesse case, como aumentar o espaço amostral de hiperparâmetros, incluir mais features, e etapa de seleção de features (em caso de conjunto de dados hiperdimensional), etc.
 
 A seguir essas sugestões serão discutidas.
 
@@ -18,7 +18,11 @@ param_grid = {
 }
 ```
 
-2) Método de seleção de features
+2) Incluir mais variáveis
+
+Pode ser útil incluir mais variáveis a partir da variável dependente original, ou incluir variáveis exógenas afim de melhorar a performance preditiva dos modelos, a decisão de incluir mais variáveis depende do domínio do Analista/Cientista de Dados sobre o fenâmeno que está sendo modelado.
+
+3) Método de seleção de features
 
 Em casos de conjuntos de dados com muitas features (hiperdimensionais), a seleção de features pode melhorar o desempenho e reduzir o overfitting. Podemos usar `SelectKBest` ou `RFE` como parte do pipeline. Exemplo:
 
@@ -33,10 +37,6 @@ pipeline = Pipeline([
 ])
 ```
 
-3) Testar outros modelos
+4) Testar outros modelos
 
-É interessante avaliar a performance de outros modelos para a previsão do fenômeno de interesse, inclusive modelos clássicos como ARIMA ([https://www.statsmodels.org/stable/generated/statsmodels.tsa.arima.model.ARIMA.html](https://www.statsmodels.org/stable/generated/statsmodels.tsa.arima.model.ARIMA.html)), por exemplo, e utilizar o mesmo como *base line* quando não se tem um ponto de refência com relação a performance de previsão.
-
-4) Incluir mais variáveis
-
-Pode ser útil incluir mais variáveis a partir da variável dependente original, ou incluir variáveis exógenas afim de melhorar a performance preditiva dos modelos, a decisão de incluir mais variáveis depende do domínio do Analista sobre o fenâmeno que está sendo modelado.
+É interessante avaliar a performance de outros modelos para a previsão do fenômeno de interesse, inclusive usar modelos clássicos como ARIMA ([https://www.statsmodels.org/stable/generated/statsmodels.tsa.arima.model.ARIMA.html](https://www.statsmodels.org/stable/generated/statsmodels.tsa.arima.model.ARIMA.html)), por exemplo, e utilizar o mesmo como *base line* quando não se tem um ponto de refência com relação a performance de previsão.

@@ -86,8 +86,8 @@ search = HalvingGridSearchCV(
 )
 
 X = train.copy()  # inclui a coluna 'value_usd' no X para uso no pipeline de feature engineering
-y = pd.concat([train["value_usd"].shift(-i) for i in range(1, 16)], axis=1).dropna()  # criando as colunas para previsão de D+15
-y.columns = [f"value_usd_t{i}" for i in range(1, 16)]
+y = pd.concat([train["value_usd"].shift(-i) for i in range(0, 15)], axis=1).dropna()  # criando as colunas para previsão de D+15
+y.columns = [f"value_usd_t{i+1}" for i in range(0, 15)]
 X = X.iloc[:len(y)]  # alinhando X e y
 
 # fit do modelo
@@ -101,37 +101,45 @@ print("Best score: ", search.best_score_)
 Checando a média da importância de features paras as previsões com `RegressorChain`.
 
 ```python
-import matplotlib.pyplot as plt
 import numpy as np
 
-# acessando os regressores encadeados
-chain_regressors = best_model.named_steps["model"].estimators_
+# melhor modelo
+best_pipeline = search.best_estimator_
+best_regressor_chain = best_pipeline.named_steps["model"]
 
-# iterando sobre cada regressor encadeado para coletar as importâncias das features
-importances_list = []
-for chain in chain_regressors:
-    for regressor in chain:
-        if hasattr(regressor, "feature_importances_"):
-            importances_list.append(regressor.feature_importances_)
+# extraindo o transformador de engenharia de features
+feature_engineering = best_pipeline.named_steps["feature_engineering"]
 
-# convertendo a lista de importâncias para um array numpy
-importances = np.array(importances_list)
+# transformando X para obter as features geradas
+X_transformed = feature_engineering.transform(X)
+feature_names = X_transformed.columns
 
-# calculando a média das importâncias das features
-mean_importances = np.mean(importances, axis=0)
+# inicializando a matriz para armazenar as importâncias das features
+num_original_features = X_transformed.shape[1]
+feature_importances = np.zeros(num_original_features)
+
+# extraindo a importância de features de cada regressor na cadeia
+for i, estimator in enumerate(best_regressor_chain.estimators_):
+    # número de características originais mais i previsões adicionadas
+    num_features = num_original_features + i
+    importances = estimator.feature_importances_[:num_original_features]
+    feature_importances[:len(importances)] += importances
+
+# normalizando as importâncias das features
+feature_importances /= len(best_regressor_chain.estimators_)
 
 # DataFrame para as importâncias das features
 importance_df = pd.DataFrame({
     "Feature": feature_names,
-    "Mean Importance": mean_importances,
-}).sort_values(by="Mean Importance", ascending=False)
+    "Importance": feature_importances
+}).sort_values(by="Importance", ascending=False)
 
-# gráfico de barras horizontal com média
+# plotando o gráfico de barras horizontal
 plt.figure(figsize=(10, 8))
-plt.barh(importance_df["Feature"], importance_df["Mean Importance"], color="skyblue")
-plt.xlabel("Mean Importance")
+plt.barh(importance_df["Feature"], importance_df["Importance"], color="skyblue")
+plt.xlabel("Importância")
 plt.ylabel("Features")
-plt.title("Feature Importances")
-plt.gca().invert_yaxis()  # inverte o eixo y para a feature mais importante aparecer no topo
+plt.title("Importâncias de Features Médias dos Modelos")
+plt.gca().invert_yaxis()  # Inverte o eixo y para a feature mais importante aparecer no topo
 plt.show()
 ```

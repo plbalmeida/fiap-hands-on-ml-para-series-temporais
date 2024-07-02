@@ -154,14 +154,12 @@ best_model = search.best_estimator_
 # extraindo o transformador de engenharia de features
 feature_engineering = best_model.named_steps["feature_engineering"]
 
-# transformando X para obter as features geradas
+# transformando X para obter o nome das features geradas
 X_transformed = feature_engineering.transform(X)
+feature_names = X_transformed.columns
 
 # acessando as importâncias das features
 importances = best_model.named_steps["model"].feature_importances_
-
-# obtendo os nomes das features
-feature_names = X_transformed.columns
 
 # DataFrame para as importâncias das features
 importance_df = pd.DataFrame({
@@ -172,9 +170,9 @@ importance_df = pd.DataFrame({
 # plotando o gráfico de barras horizontal
 plt.figure(figsize=(10, 8))
 plt.barh(importance_df["Feature"], importance_df["Importance"], color="skyblue")
-plt.xlabel("Importance")
+plt.xlabel("Importância")
 plt.ylabel("Features")
-plt.title("Feature Importances")
+plt.title("Importância de Features")
 plt.gca().invert_yaxis()  # Inverte o eixo y para a feature mais importante aparecer no topo
 plt.show()
 ```

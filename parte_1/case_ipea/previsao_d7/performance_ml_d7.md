@@ -50,9 +50,9 @@ pd.DataFrame({
 })
 ```
 
-É posssível perceber que para quase todas as métricas, os modelos pioram a performance ao avançar em *D+n*.
+É posssível perceber que todas as métricas pioram a performance ao avançar em *D+n*, logo deve se ter cautela para tomar alguma decisão baseado nas previsões com erro maior.
 
-A seguir, o código permite visualizar as previsões contra o conjunto de dados de teste para algumas datas.
+A seguir, o código permite visualizar as previsões em comparação com o conjunto de dados de teste para algumas datas.
 
 ```python
 import matplotlib.pyplot as plt
