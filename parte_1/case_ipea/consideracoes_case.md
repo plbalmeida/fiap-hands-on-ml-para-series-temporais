@@ -37,6 +37,8 @@ pipeline = Pipeline([
 ])
 ```
 
+Existe uma série de métodos de seleção de features disponível da biblioteca sci-kit learn: [https://scikit-learn.org/stable/modules/feature_selection.html](https://scikit-learn.org/stable/modules/feature_selection.html)
+
 4) Testar outros modelos
 
 É interessante avaliar a performance de outros modelos para a previsão do fenômeno de interesse, inclusive usar modelos clássicos como ARIMA ([https://www.statsmodels.org/stable/generated/statsmodels.tsa.arima.model.ARIMA.html](https://www.statsmodels.org/stable/generated/statsmodels.tsa.arima.model.ARIMA.html)), por exemplo, e utilizar o mesmo como *base line* quando não se tem um ponto de refência com relação a performance de previsão.

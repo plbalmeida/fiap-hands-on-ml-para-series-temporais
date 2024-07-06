@@ -54,7 +54,7 @@ class FeatureEngineer(BaseEstimator, TransformerMixin):
         X["day"] = X.index.day
         X["quarter"] = X.index.quarter
         X["year"] = X.index.year
-        X = X.drop(columns=["value_usd"])
+        X = X.drop(columns=[self.target])
         X.fillna(0, inplace=True)
         return X
 

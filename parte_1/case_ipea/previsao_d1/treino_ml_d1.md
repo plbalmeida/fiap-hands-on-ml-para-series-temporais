@@ -8,7 +8,7 @@ Agora um modelo de ML de regressão supervisionado será implementado para previ
 
 - **Validação Cruzada**: Utilizar técnicas como validação cruzada em blocos para avaliar a performance do modelo em diferentes períodos de tempo.
 
-A ordem dos dados importa quando se trata de série temporal, por isso não se deve usar a função `train_test_split` do sci-kit learning para dividir os dados, pois ela faz isso randomicamente.
+A ordem dos dados importa quando se trata de série temporal, por isso deve se ter atenção para usar a função `train_test_split` do sci-kit learning para dividir os dados, pois ela faz isso randomicamente por default.
 
 A seguir, a divisão do conjunto de dados original é feita obedecendo a ordem dos dados, sendo 90% para o conjunto de dados de treino e 10% para o conjunto de dados de teste.
 
@@ -91,7 +91,7 @@ class FeatureEngineer(BaseEstimator, TransformerMixin):
         X["day"] = X.index.day
         X["quarter"] = X.index.quarter
         X["year"] = X.index.year
-        X = X.drop(columns=["value_usd"])
+        X = X.drop(columns=[self.target])
         X.fillna(0, inplace=True)
         return X
 
