@@ -28,4 +28,4 @@
 * [Containerização com Docker](parte_2/container.md)
 * [Esteira de CI](parte_2/ci.md)
 * [Execução da aplicação](parte_2/execucao.md)
-
+* [Considerações finais](parte_2/consideracoes.md)
