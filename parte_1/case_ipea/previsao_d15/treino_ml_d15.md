@@ -32,7 +32,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.base import BaseEstimator, TransformerMixin
 import pandas as pd
 
-# classe customizada para engenharia de features
+# classe customizada para engenharia de features para horizonte de previsão > que 1 passo de tempo
 class FeatureEngineer(BaseEstimator, TransformerMixin):
     def __init__(self, target, lags, window_size):
         self.target = target
@@ -46,11 +46,11 @@ class FeatureEngineer(BaseEstimator, TransformerMixin):
         X = X.copy()
         for lag in range(1, self.lags + 1):
             X[f"lag_{lag}"] = X[self.target].shift(lag)
-        X[f"rolling_mean_{self.window_size}"] = X[self.target].shift(1).rolling(window=self.window_size).mean()
-        X["diff"] = X[self.target].shift(1).diff()
+        X[f"rolling_mean_{self.window_size}"] = X[self.target].rolling(window=self.window_size).mean()
+        X["diff"] = X[self.target].diff()
         X["month"] = X.index.month
         X["day_of_week"] = X.index.dayofweek
-        X[f"rolling_std_{self.window_size}"] = X[self.target].shift(1).rolling(window=self.window_size).std()
+        X[f"rolling_std_{self.window_size}"] = X[self.target].rolling(window=self.window_size).std()
         X["day"] = X.index.day
         X["quarter"] = X.index.quarter
         X["year"] = X.index.year
@@ -119,9 +119,7 @@ num_original_features = X_transformed.shape[1]
 feature_importances = np.zeros(num_original_features)
 
 # extraindo a importância de features de cada regressor na cadeia
-for i, estimator in enumerate(best_regressor_chain.estimators_):
-    # número de características originais mais i previsões adicionadas
-    num_features = num_original_features + i
+for estimator in best_regressor_chain.estimators_:
     importances = estimator.feature_importances_[:num_original_features]
     feature_importances[:len(importances)] += importances
 

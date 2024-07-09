@@ -14,8 +14,8 @@
         * [Treino do modelo de ML](parte_1/case_ipea/previsao_d1/treino_ml_d1.md)
         * [Avaliação de Performance](parte_1/case_ipea/previsao_d1/performance_ml_d1.md)
     * Previsão de preço D+15
-        * [Treino do modelo de ML](parte_1/case_ipea/previsao_d7/treino_ml_d7.md)
-        * [Avaliação de Performance](parte_1/case_ipea/previsao_d7/performance_ml_d7.md)
+        * [Treino do modelo de ML](parte_1/case_ipea/previsao_d15/treino_ml_d15.md)
+        * [Avaliação de Performance](parte_1/case_ipea/previsao_d15/performance_ml_d15.md)
     * [Considerações sobre o case](parte_1/case_ipea/consideracoes_case.md)
 
 ## Parte 2
