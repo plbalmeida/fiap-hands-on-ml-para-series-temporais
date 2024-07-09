@@ -23,7 +23,7 @@
 * [Set up do ambiente para a Parte 2](parte_2/set_up_ambiente.md)
 * [Modularização do código](parte_2/modularizando_aplicacao.md)
 * [Arquivos de teste](parte_2/testes.md)
-* [Script de treano e previsões com ML](parte_2/script_treino_ml.md)
+* [Script de treino e previsões com ML](parte_2/script_treino_ml.md)
 * [Script do Streamlit](parte_2/streamlit.md)
 * [Containerização com Docker](parte_2/container.md)
 * [Esteira de CI](parte_2/ci.md)
