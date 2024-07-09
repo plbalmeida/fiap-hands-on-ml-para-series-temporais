@@ -20,7 +20,7 @@
 
 ## Parte 2
 * [Modelo em produção](parte_2/overview.md)
-* [Set up dp ambiente para a Parte 2](parte_2/set_up_ambiente.md)
+* [Set up do ambiente para a Parte 2](parte_2/set_up_ambiente.md)
 * [Modularização do código](parte_2/modularizando_aplicacao.md)
 * [Arquivos de teste](parte_2/testes.md)
 * [Script de treano e previsões com ML](parte_2/script_treino_ml.md)
