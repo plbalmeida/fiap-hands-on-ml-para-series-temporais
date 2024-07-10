@@ -120,7 +120,11 @@ O primeiro job se chama `lint`, que é responsável por verificar o código font
          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
      ```
      Executa duas verificações com `flake8`:
-     - A primeira verifica se há erros de sintaxe ou nomes indefinidos (`E9`, `F63`, `F7`, `F82`).
+     - A primeira verifica se há erros de sintaxe ou nomes indefinidos (`E9`, `F63`, `F7`, `F82`). A seguir uma breve descrição dos tipos de erro:
+        - O `E9` é referente a erros de sintaxe gerais: Estes são erros que ocorrem quando o Python não consegue interpretar o código. Por exemplo, parênteses não fechados, erros de indentação, etc;
+        - O `F63` é referente a erros relacionados a imports: Estes erros ocorrem quando há problemas com as declarações de importação, como importações circulares;
+        - `F7` é referente a erros relacionados ao uso de variáveis: Estes erros ocorrem quando há referências a variáveis que não foram definidas.
+        - `F82` se trata de erros relacionados a nomes indefinidos em funções: Estes erros ocorrem quando funções ou métodos fazem referência a variáveis ou funções que não existem no escopo atual.
      - A segunda trata todos os erros como avisos e permite complexidade máxima de 10 e largura máxima de linha de 127 caracteres.
 
 #### Test Job
