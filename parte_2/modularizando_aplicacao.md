@@ -1,12 +1,8 @@
 # Modularizando a Aplicação
 
-Modularizar um código traz inúmeras vantagens, incluindo a melhoria da organização e manutenção do código. Ao dividir o código em módulos menores e mais gerenciáveis, cada um com uma responsabilidade específica, facilita-se a leitura e a compreensão do código por diferentes desenvolvedores. Além disso, a modularização promove a reutilização de código, permitindo que funções ou classes desenvolvidas para um módulo possam ser facilmente utilizadas em outros projetos ou partes do mesmo projeto, economizando tempo e esforço.
+> **Por que modularizar o código?** Modularizar um código traz inúmeras vantagens, incluindo a melhoria da organização e manutenção do código. Ao dividir o código em módulos menores e mais gerenciáveis, cada um com uma responsabilidade específica, facilita-se a leitura e a compreensão do código por diferentes desenvolvedores. Além disso, a modularização promove a reutilização de código, permitindo que funções ou classes desenvolvidas para um módulo possam ser facilmente utilizadas em outros projetos ou partes do mesmo projeto, economizando tempo e esforço. A testabilidade com a modularização também é aprimorada, pois é mais simples escrever e executar testes unitários para pequenos módulos independentes do que para um grande bloco de código monolítico. Por fim, a modularização facilita a identificação e correção de bugs, contribuindo para um desenvolvimento mais eficiente e uma melhor qualidade de software.
 
-A testabilidade também é aprimorada, pois é mais simples escrever e executar testes unitários para pequenos módulos independentes do que para um grande bloco de código monolítico. Por fim, a modularização facilita a identificação e correção de bugs, contribuindo para um desenvolvimento mais eficiente e uma melhor qualidade de software.
-
-Módulo 
-
-A classe `FeatureEngineer` será modularizada, assim como será criada uma função para treino do modelo, e uma função para preparar o conjunto de dados de target.
+A classe `FeatureEngineer` será modularizada, assim como será criada um módulo de treino do modelo, e um módulo para preparar o conjunto de dados de target.
 
 Primeiro é criado o diretório `src/`, depois o `__init__.py` para modularizar os scripts do diretório, e o `feature_engineer.py` para colocar a classe de features engineer:
 
@@ -211,4 +207,14 @@ def target_transform(train, target, horizon):
     y.columns = [f"{target}_t{i+1}" for i in range(0, horizon)]
     return y
 
+```
+
+Com isso teremos adicionado no repositório os seguintes módulos no diretório `src/`:
+
+```bash
+├── src
+    ├── __init__.py
+    ├── feature_engineer.py
+    ├── model_train.py
+    └── utils.py
 ```

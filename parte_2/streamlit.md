@@ -1,6 +1,6 @@
 # Streamlit
 
-> Streamlit é uma biblioteca de código aberto em python que facilita a criação de aplicações web interativas e personalizadas para ciência de dados e aprendizado de máquina. Com Streamlit, os desenvolvedores podem transformar scripts de dados em aplicativos funcionais de maneira rápida e eficiente, sem a necessidade de conhecimento aprofundado em desenvolvimento web. A biblioteca permite a visualização de dados, integração com bibliotecas populares como Pandas, Matplotlib e Plotly, e a criação de widgets interativos com poucas linhas de código, tornando-se uma ferramenta poderosa para criar protótipos e compartilhar análises de dados de forma dinâmica e visualmente atraente.
+> **O que é o Streamlit?** Streamlit é uma biblioteca de código aberto em python que facilita a criação de aplicações web interativas e personalizadas para ciência de dados e ML. Com Streamlit, os desenvolvedores podem transformar scripts de dados em aplicativos funcionais de maneira rápida e eficiente, sem a necessidade de conhecimento aprofundado em desenvolvimento web. A biblioteca permite a visualização de dados, integração com bibliotecas populares como Pandas, Matplotlib e Plotly, e a criação de widgets interativos com poucas linhas de código, tornando-se uma ferramenta poderosa para criar protótipos e compartilhar análises de dados de forma dinâmica e visualmente atraente.
 
 Site do Streamlit: [https://streamlit.io/](https://streamlit.io/)
 

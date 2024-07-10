@@ -1,6 +1,6 @@
 # Testes
 
-A seguir serão criados os arquivos de teste dos módulos da `src/`:
+A seguir serão criados os arquivos de teste dos módulos do diretório `src/`:
 
 Criar o diretório:
 

@@ -1,28 +1,28 @@
 Para realizar a parte 2 do hands-on, é necessário o seguinte set up:
 
-1) Ter o git instalado.
+1) Ter o git instalado no sua máquina local
 
 - [https://git-scm.com/](https://git-scm.com/)
 
 - [https://www.alura.com.br/artigos/o-que-e-git-github#:~:text=Abra%20o%20Terminal%20e%20digite,instru%C3%A7%C3%B5es%20para%20instalar%20o%20Git.](https://www.alura.com.br/artigos/o-que-e-git-github#:~:text=Abra%20o%20Terminal%20e%20digite,instru%C3%A7%C3%B5es%20para%20instalar%20o%20Git.)
 
-2) Ter conta no GitHub.
+2) Ter conta no GitHub
 
 - [https://git-scm.com/](https://git-scm.com/)
 
 - [https://docs.github.com/pt/get-started/start-your-journey/creating-an-account-on-github](https://docs.github.com/pt/get-started/start-your-journey/creating-an-account-on-github)
 
-3) Ter o Docker instalado.
+3) Ter o Docker Desktop instalado
 
 - [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/)
 
-4) Ativar o ambiente virtual (o mesmo foi criado na parte 1).
+4) Ativar o ambiente virtual (o mesmo foi criado na parte 1)
 
 ```bash
 source venv/bin/activate
 ```
 
-5) Atualizar o arquivo de dependências.
+5) Atualizar o arquivo de dependências
 
 Atualizar o `requirements.txt` com as bibliotecas que iremos usar versionadas.
 
@@ -44,7 +44,7 @@ Instalar as bibliotecas no ambiente virtual criado:
 pip install -r requirements.txt  
 ```
 
-6) Criar repo no GitHub:
+6) Criar repo no GitHub
 
 Iniciar o repositório localmente:
 

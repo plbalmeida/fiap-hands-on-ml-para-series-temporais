@@ -1,6 +1,6 @@
 # Containerização da Aplicação com Docker
 
-> Docker é uma plataforma de código aberto que automatiza a implementação de aplicações dentro de contêineres de software. Os contêineres são unidades leves e portáteis que encapsulam uma aplicação e todas as suas dependências, incluindo bibliotecas, configurações e arquivos necessários para a execução, garantindo que o software funcione de maneira consistente em diferentes ambientes. Docker permite a criação, teste e implantação de aplicações rapidamente, facilitando a escalabilidade e a gestão de ambientes de desenvolvimento e produção. Além disso, a utilização de contêineres ajuda a isolar as aplicações, aumentando a segurança e simplificando a manutenção e atualização dos sistemas.
+> **O que é o Docker?** Docker é uma plataforma de código aberto que automatiza a implementação de aplicações dentro de contêineres de software. Os contêineres são unidades leves e portáteis que encapsulam uma aplicação e todas as suas dependências, incluindo bibliotecas, configurações e arquivos necessários para a execução, garantindo que o software funcione de maneira consistente em diferentes ambientes. Docker permite a criação, teste e implantação de aplicações rapidamente, facilitando a escalabilidade e a gestão de ambientes de desenvolvimento e produção. Além disso, a utilização de contêineres ajuda a isolar as aplicações, aumentando a segurança e simplificando a manutenção e atualização dos sistemas.
 
 Site do Docker: [https://www.docker.com/](https://www.docker.com/)
 

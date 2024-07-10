@@ -1,6 +1,10 @@
 # Esteira de CI
 
-> CI, ou Integração Contínua (Continuous Integration), é uma prática de desenvolvimento de software onde os desenvolvedores frequentemente integraram seu código em um repositório compartilhado, várias vezes ao dia. Cada integração é verificada por meio de automações, como testes unitários e de integração, para detectar erros rapidamente. A principal vantagem do CI é a identificação precoce de defeitos e conflitos de código, o que reduz o tempo e o esforço necessários para corrigir problemas, além de melhorar a qualidade do software. Com CI, equipes de desenvolvimento podem entregar novas funcionalidades e correções de forma mais eficiente e confiável.
+> **O que é CI?** CI, ou Integração Contínua (Continuous Integration), é uma prática de desenvolvimento de software onde os desenvolvedores frequentemente integraram seu código em um repositório compartilhado, várias vezes ao dia. Cada integração é verificada por meio de automações, como testes unitários e de integração, para detectar erros rapidamente. A principal vantagem do CI é a identificação precoce de defeitos e conflitos de código, o que reduz o tempo e o esforço necessários para corrigir problemas, além de melhorar a qualidade do software. Com CI, equipes de desenvolvimento podem entregar novas funcionalidades e correções de forma mais eficiente e confiável.
+
+Nesse projeto utilizaremos o GitHub Actions para implementar uma esteira de CI.
+
+> **O que é o GitHub Actions?** GitHub Actions é uma funcionalidade do GitHub que permite a automação de fluxos de trabalho de desenvolvimento de software diretamente no repositório. Com GitHub Actions, os desenvolvedores podem definir, criar e gerenciar pipelines de integração contínua (CI) e entrega contínua (CD) usando arquivos de configuração YAML. Esses pipelines podem automatizar tarefas como a compilação do código, execução de testes, implantação de aplicações, e muito mais. As ações são desencadeadas por eventos específicos, como push de código, pull requests ou a criação de issues, permitindo uma personalização completa dos fluxos de trabalho. GitHub Actions integra-se perfeitamente com o ecossistema GitHub, proporcionando uma experiência coesa e simplificada para gerenciar o ciclo de vida do desenvolvimento de software.
 
 Criação do diretório para a esteira de CI com GitHub Actions:
 

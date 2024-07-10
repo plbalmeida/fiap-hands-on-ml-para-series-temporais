@@ -10,7 +10,7 @@ O script `model_training/main.py` para de treino do modelo será executado prime
 
 <div align="center">
   <figure>
-    <img src="execucao.png" alt="Logs de execução">
+    <img src="execucao.png" alt="Logs de execução" width="300">
   </figure>
 </div>
 
@@ -36,6 +36,6 @@ E o gráfico com importância de features:
 
 <div align="center">
   <figure>
-    <img src="preds2.png" alt="Logs de execução">
+    <img src="preds3.png" alt="Logs de execução">
   </figure>
 </div>
