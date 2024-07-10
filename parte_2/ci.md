@@ -17,7 +17,7 @@ echo > ci.yml
 Esteira de CI:
 
 ```yml
-name: Python CI
+name: CI
 
 on:
   push:
@@ -66,3 +66,99 @@ jobs:
         python -m unittest discover -s tests
 
 ```
+
+Este script faz a configuração para uma Integração Contínua (CI), e define um workflow chamado "CI" que é acionado quando há um push para a branch principal (`main`) do repositório. Abaixo está uma explicação detalhada do script:
+
+### Estrutura do Workflow
+
+- **name: CI**: Nome do workflow.
+
+- **on: push: branches: [ main ]**: O workflow é acionado sempre que há um push na branch `main`.
+
+### Jobs
+
+#### Lint Job
+
+O primeiro job se chama `lint`, que é responsável por verificar o código fonte em busca de erros de sintaxe e problemas de formatação usando `flake8`.
+
+- **runs-on: ubuntu-latest**: Este job será executado em um ambiente Ubuntu mais recente.
+
+- **steps**: Define os passos que serão executados como parte deste job.
+
+  1. **Checkout repository**:
+     ```yaml
+     - name: Checkout repository
+       uses: actions/checkout@v2
+     ```
+     Faz o checkout do código fonte do repositório.
+
+  2. **Set up Python**:
+     ```yaml
+     - name: Set up Python
+       uses: actions/setup-python@v2
+       with:
+         python-version: '3.9'
+     ```
+     Configura o ambiente Python com a versão 3.9.
+
+  3. **Install dependencies**:
+     ```yaml
+     - name: Install dependencies
+       run: |
+         pip install --upgrade pip
+         pip install flake8
+     ```
+     Atualiza o `pip` e instala o `flake8`.
+
+  4. **Lint with flake8**:
+     ```yaml
+     - name: Lint with flake8
+       run: |
+         # stop the build if there are Python syntax errors or undefined names
+         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+     ```
+     Executa duas verificações com `flake8`:
+     - A primeira verifica se há erros de sintaxe ou nomes indefinidos (`E9`, `F63`, `F7`, `F82`).
+     - A segunda trata todos os erros como avisos e permite complexidade máxima de 10 e largura máxima de linha de 127 caracteres.
+
+#### Test Job
+
+O segundo job se chama `test`, que é responsável por rodar os testes unitários.
+
+- **needs: lint**: Este job só será executado se o job `lint` for bem-sucedido.
+
+- **runs-on: ubuntu-latest**: Este job também será executado em um ambiente Ubuntu mais recente.
+
+- **steps**: Define os passos que serão executados como parte deste job.
+
+  1. **Checkout repository**:
+     ```yaml
+     - name: Checkout repository
+       uses: actions/checkout@v2
+     ```
+     Faz o checkout do código fonte do repositório.
+
+  2. **Set up Python**:
+     ```yaml
+     - name: Set up Python
+       uses: actions/setup-python@v2
+       with:
+         python-version: '3.9'
+     ```
+     Configura o ambiente Python com a versão 3.9.
+
+  3. **Run tests**:
+     ```yaml
+     - name: Run tests
+       run: |
+         python -m unittest discover -s tests
+     ```
+     Executa os testes unitários usando o módulo `unittest` do Python, procurando testes no diretório `tests`.
+
+Em resumo, este workflow realiza duas tarefas principais: 
+
+- primeiro, ele verifica o código fonte com `flake8` para garantir que não haja erros de sintaxe ou problemas de formatação;
+
+- em seguida, executa testes unitários para verificar a funcionalidade do código. Se o job `lint` falhar, o job `test` não será executado.

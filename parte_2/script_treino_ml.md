@@ -193,7 +193,7 @@ if __name__ == "__main__":
 
 ```
 
-Crie o arquivo de avariáveis de ambiente para pode usar os módulo do `src/`:
+Crie o arquivo de variáveis de ambiente `.env` na raíz do repositório para pode usar os módulo do `src/`:
 
 ```bash
 echo > .env
